@@ -1,4 +1,12 @@
 // This program takes mathematical input, parses it and returns and answer
+/* Created by Luqmanul Hakim on 22nd Dec 2019 © all rights reserved
+ * JK
+ * **************************************************************************/
+/* Main function at line 70
+ * TODO: Code text parser - DONE 
+ * TODO: Finish for all operations
+ * TODO: Add instructions to display on run
+ * TODO: Add exit routine*/
 
 #import <Foundation/Foundation.h>
 
@@ -78,18 +86,32 @@ int main (int argc, char * argv[]) {
         sscanf(line, "%lf %c %lf %c", &num[count], &sentence[count], &num[count+1], &sentence[count+1]);
         // using fgets and sscanf
         while (state != 0) {
-            /* TODO: Code the text parser */
+            /* TODO: Code the text parser - DONE*/
             
             if (start == 1) {
                 [textCalc setTotal: num[count]];
                 start = 0;
             }
-            if (sentence[count+1] != '=' || sentence[count] != '=') {
-                if (sentence[count] == '+') {
+            if (sentence[count] != 'q') {
+                if (sentence[count] == '+') { // addition
                     [textCalc add: num[count+1]];
                     printf("Current total: %.2lf\n", [textCalc total]);
+                }else if (sentence[count] == '-') { // subtraction
+                    [textCalc subtract: num[count+1]];
+                    printf("Current total: %.2lf\n", [textCalc total]);
+                }else if (sentence[count] == '*') { // multiplication
+                    [textCalc multiply: num[count+1]];
+                    printf("Current total: %.2lf\n", [textCalc total]);
+                }else if (sentence[count] == '/') { // division
+                    [textCalc divide: num[count+1]];
+                    printf("Current total: %.2lf\n", [textCalc total]);
+                } else {
+                    printf("Input error. Current total: %.2lf\n", [textCalc total]);
                 }
             } 
+            if (sentence[count] == 'q'){
+                break;
+            }
             if (sentence[count+1] == '=') {
                 ++count;
                 fgets(line, sizeof(line), stdin);
@@ -102,6 +124,7 @@ int main (int argc, char * argv[]) {
                 sscanf(line, "%c %lf %c", &sentence[count], &num[count+1], &sentence[count+1]);
             }
         }
+        printf("Bye!");
     }
     return 0;
 }
