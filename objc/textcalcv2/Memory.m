@@ -1,11 +1,16 @@
 #import "Memory.h"
 int count = 0;
 @implementation Memory
-{
-    NSMutableArray memoryArray = [[NSMutableArray alloc] init];
-}
 @synthesize memory1, memory2, result, operation;
 
+-(instancetype) initArray
+{
+    self = [super init];
+
+    if (self)
+        memArray= [NSMutableArray arrayWithCapacity:100];
+    return self;
+}
 -(void) setMemory1: (double) Memory1 setMemory2: (double) Memory2 setOps: (char) ops setResult: (double) Result
 {
     memory1 = Memory1;
@@ -15,15 +20,15 @@ int count = 0;
 
 }
 -(void) memAdd: (Memory *) memVal{
-    Memory *mem;
-    mem = memVal;
-
-    [memoryArray addObject:mem];
+    Memory *temp = [[Memory alloc] init];
+    temp.memory1 = memVal.memory1;
+    temp.memory2 = memVal.memory2;
+    [memArray addObject:temp];
 }
 
--(Memory *) memGet: (int) count
+-(instancetype) memGet: (int) count
 {
-    Memory *temp = [memoryArray objectAtIndex:count];
+    Memory *temp = [memArray objectAtIndex:count];
     return temp;
 }
 
