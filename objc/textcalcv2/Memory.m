@@ -8,7 +8,7 @@ int count = 0;
     self = [super init];
 
     if (self)
-        memArray= [NSMutableArray arrayWithCapacity:100];
+        memArray = [NSMutableArray arrayWithCapacity:100];
     return self;
 }
 -(void) setMemory1: (double) Memory1 setMemory2: (double) Memory2 setOps: (char) ops setResult: (double) Result
@@ -19,11 +19,19 @@ int count = 0;
     result = Result;
 
 }
+
 -(void) memAdd: (Memory *) memVal{
     Memory *temp = [[Memory alloc] init];
     temp.memory1 = memVal.memory1;
     temp.memory2 = memVal.memory2;
+    temp.result = memVal.result;
+    temp.operation = memVal.operation;
     [memArray addObject:temp];
+}
+
+-(void) memClean
+{
+   [memArray removeAllObjects];
 }
 
 -(instancetype) memGet: (int) count
@@ -32,11 +40,4 @@ int count = 0;
     return temp;
 }
 
--(void) memSet: (Memory *) memSet
-{
-    memory1 = memSet.memory1;
-    memory2 = memSet.memory2;
-    operation = memSet.operation;
-    result = memSet.result;
-}
 @end
