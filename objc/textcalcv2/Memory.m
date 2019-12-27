@@ -7,8 +7,9 @@ int count = 0;
 {
     self = [super init];
 
-    if (self)
+    if (self) {
         memArray = [NSMutableArray arrayWithCapacity:100];
+    }
     return self;
 }
 -(void) setMemory1: (double) Memory1 setMemory2: (double) Memory2 setOps: (char) ops setResult: (double) Result

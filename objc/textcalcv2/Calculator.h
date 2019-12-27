@@ -6,6 +6,7 @@
 @property char operation;
 
 -(instancetype) initMem;
+-(void) rewind: (int) count;
 -(void) add: (double) num1 with: (double) num2;
 -(void) subtract: (double) num1 with: (double) num2;
 -(void) multiply: (double) num1 with: (double) num2;
