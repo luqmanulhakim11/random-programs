@@ -37,7 +37,9 @@ int count = 0;
 
 -(instancetype) memGet: (int) count
 {
-    Memory *temp = [memArray objectAtIndex:count];
+    Memory *temp = [[Memory alloc] init];
+    temp = [memArray objectAtIndex:count];
+    printf("%lf", temp.result);
     return temp;
 }
 

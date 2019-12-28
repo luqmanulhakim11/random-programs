@@ -11,8 +11,7 @@
 -(instancetype) initMem {
     self = [super init];
     if (self) {
-        Memory *calcMem = [[Memory alloc] init];
-        [calcMem initArray];
+        Memory *calcMem = [[[Memory alloc] init] initArray];
         Memory *current = [[Memory alloc] init];
     }
     return self;
@@ -41,7 +40,7 @@
 
 -(void) rewind: (int) count
 {
-    Memory *temp2;
+    Memory *temp2 = [[Memory alloc] init];
     temp2 = [calcMem memGet: count];
     result = temp2.result;
     printf("\n%lf", temp2.result);
