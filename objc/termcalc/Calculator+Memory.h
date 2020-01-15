@@ -6,4 +6,6 @@
 
 +(void) initialize;
 -(instancetype) initCheck;
+-(void) memWrite;
+-(void) memRead: (int) pos;
 @end
