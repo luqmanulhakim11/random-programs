@@ -7,7 +7,7 @@
 
 -(void) check
 {
-    printf("YO\n");
+    /* TODO: Add checking mechanism*/
 }
 
 @end

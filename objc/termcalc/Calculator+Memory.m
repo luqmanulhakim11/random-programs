@@ -1,4 +1,5 @@
 // vi: ft=objc
+// TODO: Add operations and test
 
 #import "Calculator+Memory.h"
 
@@ -9,9 +10,9 @@ NSMutableArray *memArray = nil;
 {
     if (!memArray) {
         memArray = [[NSMutableArray alloc] initWithCapacity:100];
-        printf("memArray init DONE!\n");
+        printf("memArray init DONE!\n");// supposedly
         if (memArray)
-            printf("memArray OK!\n");
+            printf("memArray OK!\n"); // yeah
     }
 }
 -(instancetype) initCheck
@@ -46,6 +47,7 @@ NSMutableArray *memArray = nil;
     self.num1 = temp2.num1;
     self.num2 = temp2.num2;
     self.result = temp2.result;
+    temp2 = nil;
 
 }
 
