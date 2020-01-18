@@ -1,0 +1,9 @@
+Package: me.luqman.termcalc
+Name: termcalc
+Version: 0.0.2
+Architecture: iphoneos-arm
+Description: My personal calculator
+Maintainer: Luqmanul Hakim
+Author: Luqmanul Hakim
+Section: System
+Tag: role::hacker

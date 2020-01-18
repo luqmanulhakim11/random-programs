@@ -36,7 +36,6 @@ NSMutableArray *memArray = nil;
     temp.num1 = self.num1;
     temp.num2 = self.num2;
     temp.result = self.result;
-    printf("Current: \n %lf, %lf, %lf\n", temp.num1, temp.num2, temp.result);
     [memArray addObject: temp];
 }
 
@@ -48,7 +47,7 @@ NSMutableArray *memArray = nil;
     self.num2 = temp2.num2;
     self.result = temp2.result;
     temp2 = nil;
-
+    [memArray removeAllObjects];
 }
 
 @end
